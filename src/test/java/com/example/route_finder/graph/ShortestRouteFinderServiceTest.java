@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import mockit.Expectations;
@@ -22,10 +21,6 @@ class ShortestRouteFinderServiceTest {
 
 	@Injectable
 	private File inputFile = Paths.get("src/test/resources/route-test-file.txt").toFile();
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
 
 	@Test
 	void testInit() throws IOException {

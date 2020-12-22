@@ -25,7 +25,7 @@ public class ServicesClient {
 	 * 
 	 * @return service status
 	 */
-	public String getServicesStatus() {
+	public String getServicesResponse(String origin, String destination) {
 
 		try {
 			Thread.sleep(10000l);
@@ -33,8 +33,8 @@ public class ServicesClient {
 			e.printStackTrace();
 		}
 
-		Response respone = client.target("http://localhost:8080").path("connected").queryParam("origin", "Boston")
-				.queryParam("destination", "Philadelphia").request(MediaType.TEXT_PLAIN_TYPE).get();
+		Response respone = client.target("http://localhost:8080").path("connected").queryParam("origin", origin)
+				.queryParam("destination", destination).request(MediaType.TEXT_PLAIN_TYPE).get();
 
 		return respone.readEntity(String.class);
 	}

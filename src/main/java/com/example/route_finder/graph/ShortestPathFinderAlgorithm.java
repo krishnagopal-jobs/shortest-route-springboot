@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -92,12 +93,7 @@ public class ShortestPathFinderAlgorithm {
 
 
     private int getShortestDistance(Node target) {
-        Integer d = distance.get(target);
-        if (d == null) {
-            return Integer.MAX_VALUE;
-        } else {
-            return d;
-        }
+        return Optional.ofNullable(distance.get(target)).orElse(Integer.MAX_VALUE);
     }
 
     /*
