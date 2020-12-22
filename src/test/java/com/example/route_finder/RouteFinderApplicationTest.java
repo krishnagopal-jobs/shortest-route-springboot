@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.example.route_finder.graph.ShortestRouteFinderService;
+import com.example.route_finder.graph.RouteFinderService;
 
 import mockit.Injectable;
 
@@ -22,7 +22,7 @@ class RouteFinderApplicationTest {
 
 
 	@Injectable
-	private ShortestRouteFinderService shortestRouteFinderService;
+	private RouteFinderService shortestRouteFinderService;
 	
 	
 	private static ServicesClient servicesClient;

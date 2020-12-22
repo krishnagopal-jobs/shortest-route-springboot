@@ -1,4 +1,4 @@
-package com.example.route_finder.graph;
+package com.example.route_finder.graph.shortest_path_algorithm;
 
 
 import java.util.ArrayList;
@@ -11,8 +11,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+import com.example.route_finder.graph.Edge;
+import com.example.route_finder.graph.Graph;
+import com.example.route_finder.graph.Node;
+import com.example.route_finder.graph.PathFinderAlgorithm;
 
-public class ShortestPathFinderAlgorithm {
+
+public class ShortestPathFinderAlgorithm implements PathFinderAlgorithm {
 
 //    private final List<Node> nodes;
     private final List<Edge> edges;
@@ -100,7 +105,8 @@ public class ShortestPathFinderAlgorithm {
      * This method returns the path from the source to the selected target and
      * NULL if no path exists
      */
-    public LinkedList<Node> getPath(Node destination) {
+    @Override
+	public LinkedList<Node> getPath(Node destination) {
         LinkedList<Node> path = new LinkedList<Node>();
         Node step = destination;
         // check if a path exists

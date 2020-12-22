@@ -1,4 +1,4 @@
-package com.example.route_finder.graph;
+package com.example.route_finder.graph.shortest_path_algorithm;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,10 +17,18 @@ import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.example.route_finder.graph.Edge;
+import com.example.route_finder.graph.Graph;
+import com.example.route_finder.graph.MalformedInputFileException;
+import com.example.route_finder.graph.Node;
+import com.example.route_finder.graph.PathFinderAlgorithm;
+import com.example.route_finder.graph.RouteFinderService;
+
 import lombok.Getter;
 
+@ShortestPath
 @Named
-public class ShortestRouteFinderService {
+public class ShortestRouteFinderService implements RouteFinderService {
 
 	@Value("${input_file}")
 	private File inputFile;
@@ -58,9 +66,10 @@ public class ShortestRouteFinderService {
 
 	}
 
+	@Override
 	public List<Node> findTheShortestPath(Node origin, Node destination) {
 
-		ShortestPathFinderAlgorithm algorithm = new ShortestPathFinderAlgorithm(graph, origin);
+		PathFinderAlgorithm algorithm = new ShortestPathFinderAlgorithm(graph, origin);
 
 		return algorithm.getPath(destination);
 

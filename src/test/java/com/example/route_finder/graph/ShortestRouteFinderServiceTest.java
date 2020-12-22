@@ -9,6 +9,9 @@ import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
+import com.example.route_finder.graph.shortest_path_algorithm.ShortestPathFinderAlgorithm;
+import com.example.route_finder.graph.shortest_path_algorithm.ShortestRouteFinderService;
+
 import mockit.Expectations;
 import mockit.Injectable;
 import mockit.Mocked;
@@ -79,7 +82,7 @@ class ShortestRouteFinderServiceTest {
 		nodes.add(destination);
 		
 		new Expectations() {{
-			ShortestPathFinderAlgorithm shortAlgorithm = new ShortestPathFinderAlgorithm((Graph) any, (Node) any);
+			PathFinderAlgorithm shortAlgorithm = new ShortestPathFinderAlgorithm((Graph) any, (Node) any);
 			shortAlgorithm.getPath((Node) any);
 			this.times = 1;
 			this.result = nodes;

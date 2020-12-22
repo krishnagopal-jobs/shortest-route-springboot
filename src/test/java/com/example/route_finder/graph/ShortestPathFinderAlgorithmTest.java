@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
+import com.example.route_finder.graph.shortest_path_algorithm.ShortestPathFinderAlgorithm;
+
 class ShortestPathFinderAlgorithmTest {
 
 	private Set<Node> nodes;
@@ -46,7 +48,7 @@ class ShortestPathFinderAlgorithmTest {
 		// Lets check from location Loc_1 to Loc_10
 		Graph graph = new Graph(nodes, edges);
 		
-		ShortestPathFinderAlgorithm shortestPathFinderAlgorithm = new ShortestPathFinderAlgorithm(graph, nodesList.get(0));
+		PathFinderAlgorithm shortestPathFinderAlgorithm = new ShortestPathFinderAlgorithm(graph, nodesList.get(0));
 		LinkedList<Node> path = shortestPathFinderAlgorithm.getPath(nodesList.get(10));
 
 		assertNotNull(path);

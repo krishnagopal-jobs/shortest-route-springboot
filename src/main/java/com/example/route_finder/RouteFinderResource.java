@@ -11,14 +11,16 @@ import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
 import com.example.route_finder.graph.Node;
-import com.example.route_finder.graph.ShortestRouteFinderService;
+import com.example.route_finder.graph.RouteFinderService;
+import com.example.route_finder.graph.shortest_path_algorithm.ShortestPath;
 
 @Path("/")
 @Named
 public class RouteFinderResource {
 
 	@Inject
-	private ShortestRouteFinderService shortestRouteFinderService;
+	@ShortestPath
+	private RouteFinderService shortestRouteFinderService;
 
 	@GET
 	@Path("/connected")

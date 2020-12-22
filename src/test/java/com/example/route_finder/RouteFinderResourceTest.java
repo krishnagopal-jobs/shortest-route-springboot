@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.route_finder.graph.Node;
-import com.example.route_finder.graph.ShortestRouteFinderService;
+import com.example.route_finder.graph.RouteFinderService;
 
 import mockit.Expectations;
 import mockit.Injectable;
@@ -21,7 +21,7 @@ class RouteFinderResourceTest {
 	private RouteFinderResource routeFinderResource;
 	
 	@Injectable
-	private ShortestRouteFinderService shortestRouteFinderService;
+	private RouteFinderService shortestRouteFinderService;
 	
 	
 	@BeforeEach
