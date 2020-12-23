@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.io.IOException;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -32,7 +33,7 @@ class RouteFinderApplicationTest {
         servicesClient = new ServicesClient();
     }
 
-	
+	@DisplayName("Integration testing different requests.")
     @ParameterizedTest(name = "{index}. Does route exist between {0} and {1} : {2}")
     @CsvSource({
     	"Boston,Newark,yes",
